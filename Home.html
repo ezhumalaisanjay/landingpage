@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon DynamoDB Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<style>
+    .x_wd_yellow_highlight_bold_05 {
+    background-image: url(/yellow_highlight_bold_05.svg);
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    white-space: nowrap;
+}
+h1 {
+    font-family: "Caveat";
+   font-size: 14rem;
+        font-weight: bold;
+}
+.x_wd_doodle {
+    display: block;
+    color: #714b67;
+    font-family: "Caveat";
+    font-size: calc(1.325rem + 0.9vw);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+}
+h2 {
+    font-family: "Caveat";
+   font-size: 6rem;
+        font-weight: bold;
+}
+.x_wd_blue_highlight_01 {
+    background-image: url(/blue_highlight_01.svg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    white-space: nowrap;
+}
+.me-n10 {
+    margin-right: -12rem !important;
+}
+.mt-n3 {
+    margin-top: -1rem !important;
+}
+.text-center {
+    width: -47%; /* This should be corrected as it's invalid */
+    text-align: center;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 1061px;
+    position: relative;
+    color: #fff;
+    padding-top: 190px;
+    
+    /* Initial gradient background */
+    background: linear-gradient(135deg, #c6bbe4, #f4f4f4);
+    
+    /* Animation setup */
+    animation: gradientChange 129s infinite;
+}
+
+/* Keyframes for gradient color transition */
+@keyframes gradientChange {
+    0% {
+        background: linear-gradient(135deg, #4cad9b, #c6e2f6);
+    }
+    25% {
+        background: linear-gradient(135deg, #674688, #f8d0f5);
+    }
+    50% {
+        background: linear-gradient(135deg, #b14e45, #f9e7d0);
+    }
+    75% {
+        background: linear-gradient(135deg, hsl(48, 36%, 53%), #cce7f5);
+    }
+    100% {
+        background: linear-gradient(135deg, #e6e0f9, #8fdfbf);
+    }
+}
+
+.rotate-350 {
+    rotate: 350deg;
+}
+    
+    .display-1 {
+    font-size: calc(1.625rem + 4.5vw);
+    font-weight: 300;
+    line-height: 1.2;
+}
+.x_wd [class*="display-3"], .x_wd [class*="display-4"] {
+    line-height: 1;
+}
+
+@media (min-width: 1200px) {
+        .x_wd_doodle {
+        font-size: 2rem;
+    }
+    .d-lg-inline {
+        display: inline !important;
+    }
+     .x_wd [class*="display-3"] {
+        font-size: 4rem;
+            font-family: "Caveat";
+    font-weight: 700;
+    }
+    .h1, h1 {
+        font-size: 2.5rem;
+    }
+        .display-1 {
+        font-size: 14rem;
+        font-weight: bold;
+    }
+        .x_wd [class*="display-1"] {
+        font-size: 6rem;
+    }
+    .x_wd [class*="display-1"] {
+    font-size: calc(1.725rem + 5.7vw);
+}
+}
+.DynamoDB {
+    background: linear-gradient(291.64deg, rgb(168 184 42 / 31%), rgba(57, 179, 194, .018) 98.17%);
+    border-radius: 24px;
+    padding: 80px 60px !important;
+}
+</style>
+</head>
+<body>
+
+
+
+<!-- Main Section -->
+<main>
+    <!-- Hero Section -->
+  <section class="pt-5 pb-6 text-center">
+                <div class="container">
+                    <h1 class="display-1">All your business on <span class="x_wd_yellow_highlight_bold_05">one platform.</span></h1>
+                    <h2 class="display-3 position-relative mb-5">Simple, efficient, yet
+                        <span class="x_wd_blue_highlight_01 position-relative">affordable!
+                            <em class="x_wd_doodle position-absolute top-100 end-0 d-none d-lg-inline rotate-350 o_rtl_flip mt-n3 me-n10">
+                                <img src="https://odoocdn.com/openerp_website/static/src/img/graphics/arrow_doodle_1.svg" class="d-block mb-3" alt="" loading="lazy" style="">
+                                <span data-oe-type="monetary" data-oe-expression="pricing.get('yearly_standard_discounted', 25)"><span class="oe_currency_value">580.00</span>&nbsp;Rs</span> / month <br>for ALL apps
+                            </em>
+                        </span>
+                    </h2>
+                    <a href="/trial" class="btn btn-primary m-2">Start now<span class="d-none d-md-inline"> - It's free</span></a><div class="o_schedule_demo ">
+                    
+                        <a target="_blank" href="/appointment/?filter_appointment_type_ids=197&amp;filter_appointment_type_ids=3812" class="btn btn-light m-2">
+                            Schedule a demo
+                        </a>
+                    
+            </div>
+                    
+                    <br><br>
+                </div>
+            </section>
+           <section class="container mt-5 DynamoDB">
+    <div class="row d-flex align-items-center flex-column flex-md-row">
+        <div class="col-md-6 text-md-start">
+            <h1 class="display-3">Why Choose a Certified Zoho Books Consultant? </h1>
+            <p class="fs-4">
+                When it comes to managing your company's finances, having the right expertise on your side is invaluable. A Zoho Books consultant brings in-depth knowledge of the platform, helping you implement the software seamlessly and customize it to fit your business needs. From small businesses to large enterprises, working with a certified consultant ensures that your Zoho Books setup is optimized for efficiency, accuracy, and compliance. 
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="/zoho-books_img.png" class="img-fluid" alt="DynamoDB illustration">
+        </div>
+    </div>
+</section>
+
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
