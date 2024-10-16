@@ -8,7 +8,109 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+
 <style>
+     #cardss {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(var(--numcardss), var(--cards-height));
+            gap: var(--cards-margin);
+            padding-bottom: calc(var(--numcardss) * var(--cards-top-offset));
+            margin-bottom: var(--cards-margin);
+        }
+
+        #cards-1 { --index: 1; }
+        #cards-2 { --index: 2; }
+        #cards-3 { --index: 3; }
+        #cards-4 { --index: 4; }
+
+        .cards {
+            position: sticky;
+            top: 0;
+            padding-top: calc(var(--index) * var(--cards-top-offset));
+        }
+
+        
+
+        .cards-content > div {
+            grid-area: text;
+            width: 95%;
+            max-width: 800px;
+            place-self: center;
+            text-align: left;
+            display: grid;
+            gap: 1em;
+            place-items: start;
+        }
+
+        .cards-content > figure {
+            grid-area: img;
+            overflow: hidden;
+        }
+
+        .cards-content > figure > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: .4em;
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.42;
+            font-size: 1.1rem;
+        }
+
+        /* Animation */
+        @supports (animation-timeline: works) {
+            @scroll-timeline cardss-element-scrolls-in-body {
+                source: selector(body);
+                scroll-offsets:
+                selector(#cardss) start 1,
+                selector(#cardss) start 0;
+                start: selector(#cardss) start 1;
+                end: selector(#cardss) start 0;
+                time-range: 4s;
+            }
+
+            .cards {
+                --index0: calc(var(--index) - 1);
+                --reverse-index: calc(var(--numcardss) - var(--index0));
+                --reverse-index0: calc(var(--reverse-index) - 1);
+            }
+
+            .cards-content {
+                transform-origin: 50% 0%;
+                will-change: transform;
+                --duration: calc(var(--reverse-index0) * 1s);
+                --delay: calc(var(--index0) * 1s);
+                animation: var(--duration) linear scale var(--delay) forwards;
+                animation-timeline: cardss-element-scrolls-in-body;
+            }
+
+            @keyframes scale {
+                to {
+                    transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+                }
+            }
+        }
     .x_wd_yellow_highlight_bold_05 {
     background-image: url(./yellow_highlight_bold_05.svg);
     background-position: center 60%;
@@ -126,10 +228,41 @@ h2 {
 }
 }
 .DynamoDB {
-    background: linear-gradient(291.64deg, rgb(168 184 42 / 31%), rgba(57, 179, 194, .018) 98.17%);
+    background: linear-gradient(281deg, rgb(29 102 132), rgb(193 231 255) 98.17%);
+
     border-radius: 24px;
     padding: 80px 60px !important;
+    border: solid 1px;
 }
+
+
+/* Add your custom CSS styles here */
+        .split-text {
+            /* Example style; customize as needed */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .animated-image {
+            /* Add any animations or transitions you wish */
+            transition: transform 0.5s ease-in-out;
+        }
+        .motion-path-image {
+            animation: move 5s infinite alternate;
+        }
+        .rotate-3d-image {
+            animation: rotate 5s infinite linear;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(360deg); }
+        }
+
+
 </style>
 </head>
 <body>
@@ -161,22 +294,63 @@ h2 {
                     <br><br>
                 </div>
             </section>
-           <section class="container mt-5 DynamoDB">
+  
+
+
+
+  <ul id="cardss">
+            <li class="cards" id="cards-1">
+                 <section class="container mt-5 DynamoDB">
     <div class="row d-flex align-items-center flex-column flex-md-row">
-        <div class="col-md-6 text-md-start">
-            <h1 class="display-3">Why Choose a Certified Zoho Books Consultant? </h1>
-            <p class="fs-4">
-                When it comes to managing your company's finances, having the right expertise on your side is invaluable. A Zoho Books consultant brings in-depth knowledge of the platform, helping you implement the software seamlessly and customize it to fit your business needs. From small businesses to large enterprises, working with a certified consultant ensures that your Zoho Books setup is optimized for efficiency, accuracy, and compliance. 
-            </p>
-        </div>
-        <div class="col-md-6">
-            <img src="./zoho-books_img.png" class="img-fluid" alt="DynamoDB illustration">
-        </div>
+      <div class="col-md-6 text-md-start">
+        <h1 class="display-3">Why Choose a Certified Zoho Books Consultant?</h1>
+        <p class="fs-4">When it comes to managing your company's finances, having the right expertise on your side is invaluable...</p>
+      </div>
+      <div class="col-md-6">
+        <img src="./zoho-books_img.png" class="img-fluid" alt="DynamoDB illustration">
+      </div>
     </div>
-</section>
+  </section>
+            </li>
+
+            <li class="cards" id="cards-2">
+             
+  <section class="container mt-5 DynamoDB">
+    <div class="row d-flex align-items-center flex-column flex-md-row">
+      <div class="col-md-6">
+        <img src="./zoho-cycle-1.png" class="img-fluid" alt="DynamoDB illustration">
+      </div>
+      <div class="col-md-6 text-md-start">
+        <h1 class="display-3">Comprehensive Expertise</h1>
+        <p class="fs-4">Our team consists of certified Zoho Books consultants who possess deep expertise...</p>
+      </div>
+    </div>
+  </section>
+            </li>
+
+            <li class="cards" id="cards-3">
+            
+  <section class="container mt-5 DynamoDB">
+    <div class="row d-flex align-items-center flex-column flex-md-row">
+      <div class="col-md-6 text-md-start">
+        <h1 class="display-3">Tailored Solutions</h1>
+        <p class="fs-4">We understand that no two businesses are alike, so we offer solutions tailored to your specific industry...</p>
+      </div>
+      <div class="col-md-6">
+        <img src="./Zoho-One-applications.png" class="img-fluid" alt="DynamoDB illustration">
+      </div>
+    </div>
+  </section>
+            </li>
+
+        </ul>
+
+
 
 
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
